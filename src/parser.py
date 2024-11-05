@@ -23,11 +23,15 @@ class parser():
         return user_set
 
 
-    # parsing
-    followers_set = parse_json(followers)
-    following_set = parse_json(following['relationships_following'])
+    # returns users who don't follow you back
+    def notFollowingMe():
+        followers_set = parse_json(followers)
+        following_set = parse_json(following['relationships_following'])
+        notFollowing = following_set - followers_set
+        for users in notFollowing:
+            print(users)
 
-    not_following_me = following_set - followers_set
 
-    for users in not_following_me:
-        print(users)
+class __main__:
+    notFollowingMe()
+    
