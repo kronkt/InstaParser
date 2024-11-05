@@ -1,3 +1,4 @@
 # ignore local json files
 ./json/*
+# whatever is this
 .DS_Store
